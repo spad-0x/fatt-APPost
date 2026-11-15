@@ -44,14 +44,14 @@ function createHud() {
  * @param {string[]} o.scenes                 scene di questa pagina, nell'ordine dei tasti 1–9
  * @param {(script: object) => void} [o.onLoad] preparazione della pagina prima del primo passo
  */
-export async function startRegia({ targets, scenes, onLoad }) {
+export async function startRegia({ targets, scenes, onLoad, showHud = true }) {
   const params = readRegiaParams();
   const engine = createEngine();
   Object.entries(targets).forEach(([name, target]) => engine.register(name, target));
   engine.setSpeed(params.velocita);
 
   document.documentElement.classList.toggle('is-ripresa', params.ripresa);
-  const hud = params.ripresa ? null : createHud();
+  const hud = params.ripresa || !showHud ? null : createHud();
   let loadErrors = [];
   let current = null;
 

@@ -1751,6 +1751,7 @@ async function init() {
   }
 
   const engine = await startRegia({
+    showHud: false,
     targets: { mappa, orchestratore, registro, bus },
     scenes: SCENES,
     onLoad(script) {
