@@ -1503,6 +1503,13 @@ async function init() {
         if (headline) hero.appendChild(el('h2', 'op-title', headline));
         if (subline) hero.appendChild(el('p', 'op-sub', subline));
         if (showBrands) {
+          const close = el('button', 'op-close', '×');
+          close.type = 'button';
+          close.setAttribute('aria-label', 'Nascondi la presentazione dell’idea');
+          close.addEventListener('click', () => {
+            openingOverlay.hidden = true;
+          });
+          hero.appendChild(close);
           const brands = el('div', 'op-brands');
           const b1 = el('div', 'op-brand-pill is-primary');
           b1.append(el('strong', null, 'NapoliOS'), el('span', null, 'Per chi governa la città · Sala Operativa'));
