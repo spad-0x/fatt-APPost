@@ -1,0 +1,58 @@
+{
+  "id": "q3",
+  "titolo": "Q3 — Il lampione spento",
+  "clock": "20:05:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "chat",
+      "do": "begin",
+      "args": {
+        "title": "Lampione spento",
+        "who": "Sanità · dati simulati",
+        "credits": 24
+      }
+    },
+    {
+      "at": 400,
+      "to": "chat",
+      "do": "user",
+      "args": {
+        "text": "Lampione spento sotto casa."
+      }
+    },
+    {
+      "at": 1100,
+      "to": "chat",
+      "do": "trace",
+      "args": {
+        "agent": "Illuminazione",
+        "protocol": "citizen.report",
+        "text": "Segnalo il guasto al Comune",
+        "detail": "Guasto registrato"
+      }
+    },
+    {
+      "at": 2000,
+      "to": "chat",
+      "do": "trace",
+      "args": {
+        "done": true,
+        "doneTitle": "Comune consultato · Illuminazione"
+      }
+    },
+    {
+      "at": 2100,
+      "to": "chat",
+      "do": "say",
+      "args": {
+        "text": "Guasto registrato. Per stasera ti indico un percorso illuminato."
+      }
+    },
+    {
+      "at": 3800,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}

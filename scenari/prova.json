@@ -1,0 +1,11 @@
+{
+  "id": "prova",
+  "titolo": "Script di prova del motore: due messaggi nella chat",
+  "clock": "21:40:00",
+  "steps": [
+    { "at": 0, "to": "chat", "do": "begin" },
+    { "at": 800, "to": "chat", "do": "user", "args": { "text": "Che faccio stasera?" } },
+    { "after": 400, "to": "chat", "do": "typing" },
+    { "after": 900, "to": "chat", "do": "say", "args": { "text": "Ci penso io. Prima una cosa sola: da dove parti?" } }
+  ]
+}

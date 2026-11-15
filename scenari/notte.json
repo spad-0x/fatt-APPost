@@ -1,0 +1,257 @@
+{
+  "id": "notte",
+  "titolo": "Notte — Regolazioni A2 su luci, corse e rifiuti; chiusura strada A4 firmata da una persona",
+  "clock": "23:30:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "mappa",
+      "do": "begin",
+      "args": {
+        "target": [
+          -420,
+          110,
+          -280
+        ],
+        "distance": 10800,
+        "az": 0.22,
+        "el": 0.74,
+        "transitMode": "mixed",
+        "transitAlpha": 0.78,
+        "showAssi": true,
+        "showSemafori": false
+      }
+    },
+    {
+      "at": 300,
+      "to": "orchestratore",
+      "do": "agents",
+      "args": {
+        "active": [
+          {
+            "name": "Mobilità",
+            "status": "al lavoro",
+            "task": "Flussi per fascia oraria"
+          },
+          {
+            "name": "Eventi",
+            "status": "al lavoro",
+            "task": "Deflusso piazze"
+          },
+          {
+            "name": "Illuminazione",
+            "status": "al lavoro",
+            "task": "Assi dei rientri"
+          },
+          {
+            "name": "Igiene urbana",
+            "status": "al lavoro",
+            "task": "Cassonetti"
+          }
+        ]
+      }
+    },
+    {
+      "at": 400,
+      "to": "mappa",
+      "do": "flyTo",
+      "args": {
+        "target": [
+          -380,
+          110,
+          -320
+        ],
+        "distance": 14800,
+        "az": 0.14,
+        "el": 0.88,
+        "ms": 4200
+      }
+    },
+    {
+      "at": 1200,
+      "to": "mappa",
+      "do": "riskHeatmap",
+      "args": {
+        "opacity": 0.45,
+        "activeIds": [
+          "z-centro",
+          "z-dante"
+        ],
+        "illuminatedCorridor": true,
+        "flashTag": "Lampo 1 · Rientri notturni",
+        "flashTitle": "Illuminazione pedonale alzata (+40%)",
+        "flashSub": "Solo flussi aggregati (> 20 persone, nessuna identità) · Centro → Dante"
+      }
+    },
+    {
+      "at": 2000,
+      "to": "registro",
+      "do": "log",
+      "args": {
+        "level": "A2 Regolare",
+        "action": "Illuminazione +40% su asse rientri Centro → Dante",
+        "rule": "#REG-LUCI-A2",
+        "cost": "Fascia 23:30–02:30",
+        "outcome": "Percorsi sicuri coperti"
+      }
+    },
+    {
+      "at": 4000,
+      "to": "scena",
+      "do": "clock",
+      "args": {
+        "to": "00:10:00"
+      }
+    },
+    {
+      "at": 4100,
+      "to": "mappa",
+      "do": "riskHeatmap",
+      "args": {
+        "opacity": 0.52,
+        "activeIds": [
+          "z-dante",
+          "z-lungomare"
+        ],
+        "illuminatedCorridor": false,
+        "highlightLines": [
+          "L1",
+          "ANM_B_3953",
+          "ANM_B_3941",
+          "ANM_B_3948",
+          "ANM_B_4066"
+        ],
+        "transitAlpha": 0.96,
+        "flashTag": "Lampo 2 · Deflusso eventi",
+        "flashTitle": "Corse aggiunte prima del picco delle 00:15",
+        "flashSub": "Metro L1 e bus N1 / 151 / 140 / R2 rinforzati su Dante e Lungomare"
+      }
+    },
+    {
+      "at": 4900,
+      "to": "registro",
+      "do": "log",
+      "args": {
+        "level": "A2 Regolare",
+        "action": "Corse aggiuntive L1 + N1 per deflusso concerti",
+        "rule": "#REG-TPL-A2",
+        "cost": "2 corse extra · 90 min",
+        "outcome": "Attesa stimata -6 min"
+      }
+    },
+    {
+      "at": 6900,
+      "to": "scena",
+      "do": "clock",
+      "args": {
+        "to": "01:00:00"
+      }
+    },
+    {
+      "at": 7000,
+      "to": "mappa",
+      "do": "riskHeatmap",
+      "args": {
+        "opacity": 0.56,
+        "activeIds": [
+          "z-garibaldi",
+          "z-centro"
+        ],
+        "illuminatedCorridor": false,
+        "highlightLines": [],
+        "transitAlpha": 0.72,
+        "flashTag": "Lampo 3 · Servizi urbani",
+        "flashTitle": "Raccolta guidata dal riempimento cassonetti",
+        "flashSub": "Le regole restano alle persone; la città coordina ciò che è reversibile"
+      }
+    },
+    {
+      "at": 7800,
+      "to": "registro",
+      "do": "log",
+      "args": {
+        "level": "A2 Regolare",
+        "action": "Raccolta rifiuti dinamica su soglia 85% cassonetti",
+        "rule": "#REG-IGIENE-A2",
+        "cost": "Turno 01:00–04:00",
+        "outcome": "-28% percorrenza a vuoto"
+      }
+    },
+    {
+      "at": 9700,
+      "to": "scena",
+      "do": "clock",
+      "args": {
+        "to": "02:10:00"
+      }
+    },
+    {
+      "at": 9800,
+      "to": "mappa",
+      "do": "riskHeatmap",
+      "args": {
+        "opacity": 0.3,
+        "activeIds": [],
+        "illuminatedCorridor": false,
+        "highlightLines": [],
+        "transitAlpha": 0.6,
+        "flashTitle": ""
+      }
+    },
+    {
+      "at": 9900,
+      "to": "orchestratore",
+      "do": "addEvent",
+      "args": {
+        "id": "allagamento",
+        "badge": "Allagamento",
+        "title": "Tratto allagato su Via Marina",
+        "detail": "Chiusura della strada proposta dal Master",
+        "level": "red",
+        "center": [
+          14.2618,
+          40.8454
+        ]
+      }
+    },
+    {
+      "at": 10300,
+      "to": "orchestratore",
+      "do": "decide",
+      "args": {
+        "level": "A4 Decidere",
+        "status": "Istruttoria pronta · in attesa di firma",
+        "title": "Chiusura di Via Marina tra Porta di Massa e Via Duomo",
+        "effect": "Deviazione su Corso Garibaldi",
+        "cost": "+6 min sul percorso · fino a cessato allarme",
+        "rule": "Irreversibile: decide una persona · ordinanza dirigenziale",
+        "revocable": false
+      }
+    },
+    {
+      "at": 12300,
+      "to": "orchestratore",
+      "do": "decisionStatus",
+      "args": {
+        "status": "Firmata alle 02:10 dal dirigente di turno"
+      }
+    },
+    {
+      "at": 12900,
+      "to": "registro",
+      "do": "log",
+      "args": {
+        "level": "A4 Decidere",
+        "action": "Chiusura Via Marina (Porta di Massa → Via Duomo)",
+        "rule": "Firma del dirigente di turno",
+        "cost": "Fino a cessato allarme",
+        "outcome": "Deviazione attiva su C.so Garibaldi"
+      }
+    },
+    {
+      "at": 14600,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}

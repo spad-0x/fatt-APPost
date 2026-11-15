@@ -1,0 +1,245 @@
+{
+  "id": "l1",
+  "titolo": "L1 — Ingorgo e semafori su Via Nuova Marina",
+  "clock": "22:08:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "mappa",
+      "do": "setAxis",
+      "args": {
+        "reset": true,
+        "center": [
+          14.2625,
+          40.8448
+        ],
+        "distance": 4500,
+        "az": 0.16,
+        "el": 0.66,
+        "id": "via-marina",
+        "status": "ambra",
+        "highlight": true,
+        "flashCameras": false,
+        "axisBadge": "Via Nuova Marina · Traffico rallentato (ambra · 26 km/h)",
+        "corridorText": "Monitoraggio asse costiero · Via Nuova Marina (stato ambra)",
+        "flashTag": "Fase 1 · Monitoraggio ordinario",
+        "flashTitle": "Via Nuova Marina: flusso rallentato ma scorrevole",
+        "flashSub": "2 telecamere e 4 incroci semaforici sotto osservazione automatica"
+      }
+    },
+    {
+      "at": 1800,
+      "to": "mappa",
+      "do": "setAxis",
+      "args": {
+        "id": "via-marina",
+        "status": "rosso",
+        "highlight": true,
+        "flashCameras": true,
+        "axisBadge": "⚠ INGORGO RILEVATO · Da ambra a rosso (9 km/h · coda 420 m)",
+        "corridorText": "Allerta Sentinella · Via Nuova Marina passata da ambra a rosso",
+        "callouts": [
+          {
+            "label": "Via Nuova Marina · Da ambra a rosso",
+            "eta": "Velocità 9 km/h · Coda 420 m"
+          }
+        ],
+        "flashTag": "Fase 2 · Anomalia rilevata (0 clic operatore)",
+        "flashTitle": "L’asse passa da ambra a rosso: lampeggiano 2 telecamere",
+        "flashSub": "Sentinella rileva una coda improvvisa tra Porta di Massa e Via Duomo"
+      }
+    },
+    {
+      "at": 3000,
+      "to": "orchestratore",
+      "do": "agents",
+      "args": {
+        "active": [
+          {
+            "name": "Sentinella",
+            "status": "al lavoro",
+            "task": "Coda su Via Marina"
+          },
+          {
+            "name": "Eventi",
+            "status": "al lavoro",
+            "task": "Deflusso concerto"
+          },
+          {
+            "name": "Meteo",
+            "status": "al lavoro",
+            "task": "Pioggia sulla costa"
+          }
+        ]
+      }
+    },
+    {
+      "at": 4000,
+      "to": "orchestratore",
+      "do": "say",
+      "args": {
+        "from": "Master",
+        "text": "Segnalazione automatica su Via Nuova Marina: l’asse è passato da ambra a rosso.",
+        "sublines": [
+          {
+            "agent": "Sentinella",
+            "text": "Rileva una coda in crescita (420 m, 9 km/h) dalle due telecamere dell’asse."
+          },
+          {
+            "agent": "Eventi",
+            "text": "Collega il picco al deflusso del concerto sul lungomare."
+          },
+          {
+            "agent": "Meteo",
+            "text": "Conferma la pioggia in corso sul tratto costiero."
+          }
+        ]
+      }
+    },
+    {
+      "at": 6200,
+      "to": "orchestratore",
+      "do": "decide",
+      "args": {
+        "level": "A2 Regolare",
+        "status": "Avvio automatico tra 3 s · Nessun clic richiesto",
+        "title": "+20 s di verde sull’asse di Via Marina per 15 minuti",
+        "effect": "+20 s di verde sull’asse per 15 minuti",
+        "cost": "+40 s di attesa sulle traverse",
+        "rule": "#REG-TRAF-A2 · Regolazione reversibile cicli semaforici",
+        "revocable": true,
+        "revokeLabel": "Revoca (3 s)"
+      }
+    },
+    {
+      "at": 7000,
+      "to": "orchestratore",
+      "do": "decisionStatus",
+      "args": {
+        "status": "Avvio automatico tra 2 s · Nessun clic richiesto",
+        "revokeLabel": "Revoca (2 s)"
+      }
+    },
+    {
+      "at": 7800,
+      "to": "orchestratore",
+      "do": "decisionStatus",
+      "args": {
+        "status": "Avvio automatico tra 1 s · Supervisione operatore",
+        "revokeLabel": "Revoca (1 s)"
+      }
+    },
+    {
+      "after": 600,
+      "to": "mappa",
+      "do": "setAxis",
+      "args": {
+        "id": "via-marina",
+        "status": "rosso",
+        "highlight": true,
+        "flashCameras": false,
+        "controlledSems": [
+          "sem-16",
+          "sem-10",
+          "sem-11",
+          "sem-12"
+        ],
+        "semState": "verde",
+        "axisBadge": "⚡ PIANO A2 ATTIVO · 4 semafori comandati (+20 s verde sull’asse)",
+        "corridorText": "Esecuzione A2 attiva · +20 s verde su 4 incroci di Via Marina",
+        "callouts": [
+          {
+            "label": "4 Semafori Via Marina · Anello comandato",
+            "eta": "+20 s verde · 15 min",
+            "chosen": true
+          },
+          {
+            "label": "Traverse laterali",
+            "eta": "+40 s di attesa"
+          }
+        ],
+        "flashTag": "Fase 3 · Azione autonoma A2 in esecuzione",
+        "flashTitle": "Semafori di Via Marina comandati: +20 s di verde sull’asse",
+        "flashSub": "L’operatore non ha dovuto cliccare nulla; può sempre revocare il piano"
+      }
+    },
+    {
+      "at": 9600,
+      "to": "bus",
+      "do": "send",
+      "args": {
+        "type": "advisory.push",
+        "target": "Assistenti con percorsi in zona Via Marina",
+        "summary": "Coda e pioggia su Via Marina: +20 s di verde attivo sull’asse, consigliata Metro Linea 1."
+      }
+    },
+    {
+      "at": 11700,
+      "to": "scena",
+      "do": "clock",
+      "args": {
+        "to": "22:14:00"
+      }
+    },
+    {
+      "at": 11800,
+      "to": "mappa",
+      "do": "setAxis",
+      "args": {
+        "id": "via-marina",
+        "status": "ambra",
+        "highlight": true,
+        "flashCameras": false,
+        "controlledSems": [
+          "sem-16",
+          "sem-10",
+          "sem-11",
+          "sem-12"
+        ],
+        "semState": "verde",
+        "axisBadge": "✓ RITORNO AD AMBRA · Coda −32% · Flusso stabilizzato (24 km/h)",
+        "corridorText": "Via Nuova Marina tornata ambra · Coda in riassorbimento (−32%)",
+        "callouts": [
+          {
+            "label": "Via Nuova Marina · Tornata ambra",
+            "eta": "Coda −32% · 24 km/h",
+            "chosen": true
+          },
+          {
+            "label": "4 Semafori comandati (+20 s verde)",
+            "eta": "Attivo per 15 min"
+          }
+        ],
+        "flashTag": "Fase 4 · Sei minuti dopo · Effetto misurato",
+        "flashTitle": "Alle 22:14 Via Nuova Marina è tornata da rosso ad ambra",
+        "flashSub": "Il deflusso del concerto viene smaltito senza bloccare il lungomare"
+      }
+    },
+    {
+      "at": 13800,
+      "to": "registro",
+      "do": "log",
+      "args": {
+        "level": "A2 Regolare",
+        "action": "+20 s di verde su Via Marina per 15 min (4 incroci)",
+        "rule": "#REG-TRAF-A2",
+        "cost": "+40 s attesa traverse · 15 min",
+        "outcome": "Tratto tornato ambra (−32% coda) in 6 min"
+      }
+    },
+    {
+      "at": 16000,
+      "to": "orchestratore",
+      "do": "decisionStatus",
+      "args": {
+        "status": "Eseguita e registrata · Tratto tornato ambra",
+        "revokeLabel": "Revoca"
+      }
+    },
+    {
+      "at": 17000,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}

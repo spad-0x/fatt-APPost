@@ -1,0 +1,159 @@
+{
+  "id": "apertura",
+  "titolo": "Apertura — La città si accende (0:00–0:13)",
+  "clock": "21:30:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "mappa",
+      "do": "begin",
+      "args": {
+        "target": [
+          -350,
+          100,
+          -450
+        ],
+        "distance": 19500,
+        "az": 0.08,
+        "el": 1.36,
+        "transitMode": "none",
+        "dormant": true,
+        "showAssi": false,
+        "showSemafori": false
+      }
+    },
+    {
+      "after": 200,
+      "to": "mappa",
+      "do": "openingCard",
+      "args": {
+        "captions": [
+          "Un autobus che non passa"
+        ],
+        "activeIndex": 0,
+        "kicker": "Napoli, ogni giorno",
+        "headline": "A Napoli, ogni giorno, ci si arrangia."
+      }
+    },
+    {
+      "after": 1700,
+      "to": "mappa",
+      "do": "openingCard",
+      "args": {
+        "captions": [
+          "Un autobus che non passa",
+          "Una strada chiusa"
+        ],
+        "activeIndex": 1,
+        "kicker": "Napoli, ogni giorno",
+        "headline": "A Napoli, ogni giorno, ci si arrangia."
+      }
+    },
+    {
+      "after": 1700,
+      "to": "mappa",
+      "do": "openingCard",
+      "args": {
+        "captions": [
+          "Un autobus che non passa",
+          "Una strada chiusa",
+          "Una serata senza rientro"
+        ],
+        "activeIndex": 2,
+        "kicker": "Napoli, ogni giorno",
+        "headline": "A Napoli, ogni giorno, ci si arrangia."
+      }
+    },
+    {
+      "after": 2200,
+      "to": "mappa",
+      "do": "setTransit",
+      "args": {
+        "dormant": false,
+        "mode": "mixed",
+        "transitAlpha": 0.94,
+        "highlightLines": [
+          "L1",
+          "L2",
+          "L6",
+          "F1",
+          "F2",
+          "F3",
+          "F4"
+        ],
+        "showAssi": true,
+        "showSemafori": true,
+        "ms": 1400
+      }
+    },
+    {
+      "after": 150,
+      "to": "mappa",
+      "do": "flyTo",
+      "args": {
+        "target": [
+          -450,
+          110,
+          -220
+        ],
+        "distance": 10600,
+        "az": 0.24,
+        "el": 0.72,
+        "ms": 2200
+      }
+    },
+    {
+      "after": 550,
+      "to": "mappa",
+      "do": "openingCard",
+      "args": {
+        "kicker": "L’idea",
+        "headline": "E se la città avesse un sistema operativo?",
+        "showBrands": true
+      }
+    },
+    {
+      "after": 1500,
+      "to": "orchestratore",
+      "do": "agents",
+      "args": {
+        "active": [
+          {
+            "name": "Mobilità",
+            "status": "attivo",
+            "task": "232 linee ANM + EAV in rete"
+          },
+          {
+            "name": "Sentinella",
+            "status": "attivo",
+            "task": "Assi e semafori sincronizzati"
+          },
+          {
+            "name": "Comunicazione",
+            "status": "attivo",
+            "task": "Canale verso Assistenti"
+          }
+        ]
+      }
+    },
+    {
+      "after": 500,
+      "to": "orchestratore",
+      "do": "say",
+      "args": {
+        "from": "Master",
+        "text": "Sistema urbano connesso: rete TPL multimodale e assistenti dei cittadini in ascolto.",
+        "sublines": [
+          {
+            "agent": "Mobilità",
+            "text": "Metro, funicolari, tram, ferrovie EAV e bus simulati attivi sulla mappa 3D."
+          },
+          {
+            "agent": "Comunicazione",
+            "text": "Canale bidirezionale pronto con Fatt’ APPosta."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f5f7" />
+  <meta name="color-scheme" content="light" />
+  <meta name="description" content="FattoAPPosta: l'assistente tascabile per le cose di ogni giorno. Scrivi, registra una nota vocale o allega un file." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="FattoAPPosta" />
+  <title>FattoAPPosta</title>
+
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/icon.svg" />
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png" />
+  <link rel="preload" href="./assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/fonts/poppins-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/fonts/poppins-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="./css/tokens.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <!-- Icone: un solo set, tratto 2px, angoli arrotondati -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs><mask id="mini-shade-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff"/><circle cx="27" cy="26" r="29" fill="#000"/></mask></defs>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v15.2a.5.5 0 0 1-.8.4L12 16.8l-5.7 3.8a.5.5 0 0 1-.8-.4V5A1.5 1.5 0 0 1 7 3.5Z" fill="var(--bm-fill, none)" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><path d="m20.5 11.5-8.3 8.3a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l7.9-7.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 19.5V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.6 5.6A9.9 9.9 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4M6.6 6.7C3.9 8.4 2.5 12 2.5 12S6 18.5 12 18.5c1.8 0 3.3-.5 4.6-1.3M9.9 9.9a3 3 0 0 0 4.2 4.2M3 3l18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z M14 3v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-compose" viewBox="0 0 24 24"><path d="M11 4.5H6.5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.6 3.9a2 2 0 0 1 2.8 2.8L12.5 14.6l-3.6.9.9-3.6 7.8-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4.2-4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m10 7 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M10 11v6M14 11v6M6.5 7l.8 11.2a2 2 0 0 0 2 1.8h5.4a2 2 0 0 0 2-1.8L17.5 7M9.5 7V4.5h5V7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M14.5 4.5h3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-3M10 16.5 5.5 12 10 7.5M5.5 12h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <!-- Crediti: gettone (disco con anello interno) -->
+    <symbol id="i-gettone" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <!-- Mascotte in miniatura per gli avatar della chat -->
+    <symbol id="m-mini" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#2f6b4f"/>
+      <circle cx="32" cy="32" r="30" fill="#24563f" mask="url(#mini-shade-mask)"/>
+      <path d="M19 37 24 25.5 29 37Z M35 37 40 25.5 45 37Z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="m-mini-think" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#2f6b4f"/>
+      <circle cx="32" cy="32" r="30" fill="#24563f" mask="url(#mini-shade-mask)"/>
+      <path d="M13 27 18 15.5 23 27Z M29 27 34 15.5 39 27Z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="m-mini-listen" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#2f6b4f"/>
+      <circle cx="32" cy="32" r="30" fill="#24563f" mask="url(#mini-shade-mask)"/>
+      <circle cx="22" cy="30" r="7.5" fill="#fff"/>
+      <circle cx="42" cy="30" r="7.5" fill="#fff"/>
+    </symbol>
+  </svg>
+
+  <main class="app" id="app">
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+    <!-- ========== 1. ONBOARDING ========== -->
+    <section class="view view-onboarding is-active" id="view-onboarding" aria-labelledby="onb-title">
+      <h1 class="onb-title" id="onb-title">
+        Il tuo assistente,<br />
+        <span class="onb-accent">fatto apposta</span><br />
+        per ogni giorno
+      </h1>
+
+      <div class="onb-stage" id="onb-stage">
+        <div class="mascot-wrap" id="mascot-wrap">
+          <p class="speech" id="speech" aria-live="polite">Ciao!</p>
+          <button type="button" class="mascot-btn" id="mascot-btn" aria-label="Saluta la mascotte" aria-describedby="speech">
+            <svg class="mascot" id="mascot" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+              <defs>
+                <mask id="mascot-shade-mask">
+                  <rect width="200" height="200" fill="#fff"/>
+                  <circle cx="86" cy="84" r="82" fill="#000"/>
+                </mask>
+              </defs>
+              <g class="m-body">
+                <circle cx="100" cy="100" r="84" fill="var(--c-accent)"/>
+                <circle cx="100" cy="100" r="84" fill="var(--c-accent-shade)" mask="url(#mascot-shade-mask)"/>
+                <g class="m-face">
+                  <g class="m-eyes">
+                    <path class="m-eye" d="M60 112 L72 84 L84 112 Z"/>
+                    <path class="m-eye" d="M116 112 L128 84 L140 112 Z"/>
+                  </g>
+                  <g class="m-eyes-closed">
+                    <path d="M60 104 Q72 114 84 104"/>
+                    <path d="M116 104 Q128 114 140 104"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <span class="mascot-floor" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="onb-foot" id="onb-foot">
+        <p class="onb-sub">Idee per la cena, piani per la giornata, note vocali e file: chiedi e risolvi in pochi secondi.</p>
+        <button type="button" class="cta" id="btn-start">
+          <span>Inizia ora</span>
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========== 2. FOGLIO DI ACCESSO ========== -->
+    <div class="sheet-layer" id="auth-layer" hidden>
+      <div class="scrim" id="auth-scrim"></div>
+      <div class="sheet" id="auth-sheet" role="dialog" aria-modal="true" aria-labelledby="auth-title" aria-describedby="auth-sub">
+        <div class="sheet-head">
+          <h2 class="sheet-title" id="auth-title">Entra in FattoAPPosta</h2>
+          <button type="button" class="icon-btn icon-btn--flat" id="btn-auth-close" aria-label="Chiudi">
+            <svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>
+          </button>
+        </div>
+        <p class="sheet-sub" id="auth-sub">Accedi, crea un profilo o prova subito come Guest.</p>
+
+        <div class="seg" role="tablist" aria-label="Modalità di accesso">
+          <span class="seg-thumb" aria-hidden="true"></span>
+          <button type="button" class="seg-tab" role="tab" id="tab-login" aria-selected="true" aria-controls="auth-form" data-mode="login">Accedi</button>
+          <button type="button" class="seg-tab" role="tab" id="tab-register" aria-selected="false" aria-controls="auth-form" data-mode="register" tabindex="-1">Registrati</button>
+        </div>
+
+        <form class="auth-form" id="auth-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+          <div class="collapse" id="name-collapse" inert>
+            <div class="collapse-inner">
+              <div class="field">
+                <label class="field-label" for="auth-name">Nome <span class="field-opt">(facoltativo)</span></label>
+                <input class="field-input" id="auth-name" name="name" type="text" autocomplete="given-name" placeholder="Come ti chiami?" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="auth-email">Email</label>
+            <input class="field-input" id="auth-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="nome@esempio.it" required />
+            <p class="field-error" id="err-email"></p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="auth-password">Password</label>
+            <div class="field-row">
+              <input class="field-input" id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Almeno 6 caratteri" minlength="6" required />
+              <button type="button" class="field-eye" id="btn-eye" aria-label="Mostra password" aria-pressed="false">
+                <svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg>
+              </button>
+            </div>
+            <p class="field-error" id="err-password"></p>
+          </div>
+
+          <p class="visually-hidden" id="auth-error" role="alert"></p>
+
+          <button type="submit" class="btn-primary" id="btn-auth-submit">Accedi</button>
+          <p class="local-note">Il profilo resta solo su questo dispositivo.</p>
+        </form>
+
+        <p class="divider"><span>oppure</span></p>
+
+        <button type="button" class="btn-secondary" id="btn-guest">Continua come Guest</button>
+      </div>
+    </div>
+
+    <!-- ========== 3. CHAT ========== -->
+    <section class="view view-chat" id="view-chat" aria-labelledby="chat-title" hidden>
+      <header class="chat-head">
+        <button type="button" class="icon-btn" id="btn-menu" aria-label="Apri menu" aria-controls="drawer" aria-expanded="false">
+          <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <div class="chat-head-center">
+          <h2 class="chat-title" id="chat-title" tabindex="-1">
+            <button type="button" class="chat-title-btn" id="btn-chat-title" aria-haspopup="menu" aria-expanded="false" aria-controls="chat-menu" disabled>
+              <span class="chat-title-text" id="chat-title-text">Nuova chat</span>
+              <svg class="ico ico--sm chat-title-chev" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+          </h2>
+          <p class="chat-who" id="chat-who">Guest</p>
+        </div>
+        <button type="button" class="icon-btn" id="btn-new-chat" aria-label="Nuova chat" title="Nuova chat (Ctrl+Maiusc+O)" hidden>
+          <svg class="ico" aria-hidden="true"><use href="#i-compose"/></svg>
+        </button>
+
+        <div class="chat-menu" id="chat-menu" role="menu" aria-label="Opzioni della chat" hidden>
+          <button type="button" class="chat-menu-item" id="menu-save" role="menuitem">
+            <svg class="ico ico--md" aria-hidden="true"><use href="#i-bookmark"/></svg>
+            <span id="menu-save-label">Salva conversazione</span>
+          </button>
+          <button type="button" class="chat-menu-item chat-menu-item--danger" id="menu-delete" role="menuitem">
+            <svg class="ico ico--md" aria-hidden="true"><use href="#i-trash"/></svg>
+            <span id="menu-delete-label">Elimina chat</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="empty" id="empty">
+        <svg class="empty-mascot" aria-hidden="true"><use href="#m-mini"/></svg>
+        <p class="empty-title" id="empty-title">Ciao!</p>
+        <p class="empty-sub">Come posso aiutarti oggi?</p>
+      </div>
+
+      <div class="stream" id="stream" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" aria-label="Conversazione"></div>
+
+      <div class="dock">
+        <div class="chips" id="chips" role="group" aria-label="Suggerimenti rapidi"></div>
+
+        <div class="attach-chip" id="attach-chip" hidden>
+          <svg class="ico ico--sm" aria-hidden="true"><use href="#i-file"/></svg>
+          <span class="attach-name" id="attach-name"></span>
+          <button type="button" class="attach-x" id="btn-attach-remove" aria-label="Rimuovi allegato">
+            <svg class="ico ico--sm" aria-hidden="true"><use href="#i-x"/></svg>
+          </button>
+        </div>
+
+        <form class="composer" id="composer" autocomplete="off">
+          <div class="composer-pill">
+            <input type="file" id="file-input" class="visually-hidden" tabindex="-1" aria-hidden="true" />
+            <button type="button" class="composer-icon" id="btn-attach" aria-label="Allega file">
+              <svg class="ico" aria-hidden="true"><use href="#i-clip"/></svg>
+            </button>
+            <label class="visually-hidden" for="composer-input">Messaggio</label>
+            <input type="text" class="composer-input" id="composer-input" placeholder="Messaggio" enterkeyhint="send" />
+            <span class="credits" id="credits" role="img" aria-label="24 crediti disponibili">
+              <svg class="ico ico--credits" aria-hidden="true"><use href="#i-gettone"/></svg>
+              <span class="credits-n" id="credits-n" aria-hidden="true">24</span>
+            </span>
+          </div>
+          <button type="submit" class="action" id="btn-action" aria-label="Registra nota vocale">
+            <svg class="ico ico--action" aria-hidden="true"><use id="action-icon" href="#i-mic"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- ========== 4. MENU LATERALE ========== -->
+    <div class="drawer-layer" id="drawer-layer" hidden>
+      <div class="drawer-scrim" id="drawer-scrim"></div>
+      <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu: chat e impostazioni">
+        <div class="drawer-panel" id="drawer-main">
+          <div class="drawer-top">
+            <span class="drawer-brand">
+              <svg class="drawer-logo" aria-hidden="true"><use href="#m-mini"/></svg>
+              FattoAPPosta
+            </span>
+            <button type="button" class="icon-btn icon-btn--flat" id="btn-drawer-close" aria-label="Chiudi menu">
+              <svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>
+            </button>
+          </div>
+
+          <button type="button" class="drawer-new" id="btn-drawer-new">
+            <svg class="ico" aria-hidden="true"><use href="#i-compose"/></svg>
+            <span>Nuova chat</span>
+          </button>
+
+          <div class="drawer-search">
+            <svg class="ico ico--md" aria-hidden="true"><use href="#i-search"/></svg>
+            <label class="visually-hidden" for="drawer-search">Cerca nelle chat</label>
+            <input type="search" id="drawer-search" placeholder="Cerca nelle chat" autocomplete="off" enterkeyhint="search" />
+          </div>
+
+          <nav class="history" id="history" aria-label="Chat recenti"></nav>
+          <p class="history-empty" id="history-empty">Le tue chat compariranno qui.</p>
+
+          <button type="button" class="drawer-user" id="btn-settings" aria-label="Impostazioni">
+            <span class="user-avatar" id="user-avatar" aria-hidden="true">G</span>
+            <span class="user-text">
+              <span class="user-name" id="user-name">Guest</span>
+              <span class="user-sub" id="user-sub"></span>
+            </span>
+            <svg class="ico ico--md" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </button>
+        </div>
+
+        <div class="drawer-panel" id="drawer-settings" hidden>
+          <div class="drawer-top drawer-top--start">
+            <button type="button" class="icon-btn icon-btn--flat" id="btn-settings-back" aria-label="Torna alle chat">
+              <svg class="ico" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+            </button>
+            <h2 class="drawer-title">Impostazioni</h2>
+          </div>
+
+          <div class="settings-scroll">
+            <section class="set-group" aria-labelledby="set-h-account">
+              <h3 class="set-label" id="set-h-account">Account</h3>
+              <dl class="set-card">
+                <div class="set-row"><dt>Nome</dt><dd id="set-name"></dd></div>
+                <div class="set-row"><dt>Profilo</dt><dd id="set-account"></dd></div>
+              </dl>
+            </section>
+
+            <section class="set-group" aria-labelledby="set-h-usage">
+              <h3 class="set-label" id="set-h-usage">Utilizzo</h3>
+              <dl class="set-card">
+                <div class="set-row"><dt>Crediti</dt><dd id="set-credits"></dd></div>
+                <div class="set-row"><dt>Cronologia</dt><dd id="set-chats"></dd></div>
+              </dl>
+            </section>
+
+            <section class="set-group" aria-labelledby="set-h-data">
+              <h3 class="set-label" id="set-h-data">Dati</h3>
+              <div class="set-card">
+                <button type="button" class="set-action set-action--danger" id="btn-clear-history">
+                  <svg class="ico ico--md" aria-hidden="true"><use href="#i-trash"/></svg>
+                  <span id="clear-history-label">Elimina tutte le chat</span>
+                </button>
+              </div>
+              <p class="set-note">Chat e profilo restano solo su questo dispositivo.</p>
+            </section>
+          </div>
+
+          <button type="button" class="set-action set-action--out" id="btn-logout">
+            <svg class="ico ico--md" aria-hidden="true"><use href="#i-logout"/></svg>
+            <span>Esci</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

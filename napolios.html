@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f5f7" />
+  <meta name="color-scheme" content="light" />
+  <title>NapoliOS — Sala Operativa</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/icon.svg" />
+  <link rel="preload" href="./assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/fonts/poppins-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./assets/fonts/poppins-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./css/tokens.css" />
+  <link rel="stylesheet" href="./css/napolios.css" />
+</head>
+<body>
+  <div class="nos-shell" id="nos-shell">
+    <!-- 1. Barra di stato (48 px) -->
+    <header class="nos-bar">
+      <div class="nos-brand">
+        <span class="nos-logo-dot" aria-hidden="true"></span>
+        <span class="nos-brand-name">NapoliOS</span>
+        <span class="nos-brand-sub">Comune di Napoli · Sala Operativa</span>
+      </div>
+
+      <div class="nos-corridor-pill" id="status-corridor" hidden>
+        <span class="nos-corridor-dot" aria-hidden="true"></span>
+        <span id="status-corridor-text">Onda verde attiva</span>
+      </div>
+
+      <div class="nos-meta">
+        <span class="nos-meta-item" id="status-weather">Pioggia sul lungomare · 16 °C</span>
+        <span class="nos-meta-sep" aria-hidden="true">·</span>
+        <span class="nos-meta-item" id="status-events">2 eventi aperti</span>
+        <span class="nos-meta-sep" aria-hidden="true">·</span>
+        <time class="nos-clock" id="status-clock">22:14:00</time>
+        <span class="nos-sim-badge">Dati simulati</span>
+      </div>
+    </header>
+
+    <!-- 2. Corpo centrale: Elenco eventi | Mappa 3D (>= 60%) | Orchestratore -->
+    <div class="nos-main">
+      <aside class="nos-panel nos-events" aria-label="Elenco eventi cittadini">
+        <div class="panel-head">
+          <h1 class="panel-title">Eventi e missioni</h1>
+          <span class="panel-sub" id="events-count">2 attivi</span>
+        </div>
+        <div class="events-list" id="events-list"></div>
+      </aside>
+
+      <main class="nos-map-wrap" aria-label="Mappa 3D di Napoli">
+        <canvas id="city-canvas" aria-label="Modello tridimensionale di Napoli"></canvas>
+        <canvas id="motion-canvas" aria-label="Linee di trasporto, mezzi in movimento e livelli operativi"></canvas>
+        <div class="map-markers" id="map-markers" aria-hidden="true"></div>
+
+        <!-- Barra compatta KPI, filtri TPL, viste camera e legenda -->
+        <div class="map-hud-top">
+          <div class="map-hud-controls">
+            <div class="map-kpis" aria-label="Indicatori rete trasporti">
+              <div class="kpi-cell"><b id="kpi-vehicles">0</b><span>mezzi attivi</span></div>
+              <div class="kpi-cell"><b id="kpi-lines">0</b><span>linee TPL</span></div>
+              <div class="kpi-cell"><b id="kpi-moving">0</b><span>in movimento</span></div>
+            </div>
+
+            <div class="map-pills" role="group" aria-label="Filtro rete trasporti">
+              <button type="button" class="hud-pill is-active" data-mode="mixed">Misto</button>
+              <button type="button" class="hud-pill" data-mode="rail">Ferro</button>
+              <button type="button" class="hud-pill" data-mode="bus">Bus</button>
+              <button type="button" class="hud-pill" data-mode="air">Aerei</button>
+            </div>
+
+            <div class="map-pills" role="group" aria-label="Inquadratura mappa 3D">
+              <button type="button" class="hud-pill is-active" data-view="center">Centro</button>
+              <button type="button" class="hud-pill" data-view="city">Città</button>
+              <button type="button" class="hud-pill" data-view="top">Dall’alto</button>
+            </div>
+          </div>
+
+          <div class="map-legend" id="map-legend">
+            <span class="leg-item"><i class="leg-swatch is-green"></i>Scorrevole / Verde</span>
+            <span class="leg-item"><i class="leg-swatch is-amber"></i>Rallentato</span>
+            <span class="leg-item"><i class="leg-swatch is-red"></i>Blocco / Rosso</span>
+            <span class="leg-item"><i class="leg-ring"></i>Semaforo comandato</span>
+          </div>
+        </div>
+
+        <!-- Callout percorsi / card ispezione mezzo / lampi Visione -->
+        <div class="map-callouts" id="map-callouts" hidden></div>
+        <section class="vehicle-card" id="vehicle-selection" hidden aria-label="Dettagli mezzo o fermata"></section>
+        <div class="vision-flash" id="vision-flash" hidden></div>
+        <div class="opening-overlay" id="opening-overlay" hidden></div>
+
+        <div class="map-loading" id="map-loading">
+          <span class="map-loader" aria-hidden="true"></span>
+          <span>Caricamento modello 3D di Napoli e 235 linee…</span>
+        </div>
+
+        <div class="map-attrib">
+          © OpenStreetMap · OpenFreeMap · Terreno Mapzen / Copernicus · Reti ANM / EAV · Dati simulati
+        </div>
+      </main>
+
+      <aside class="nos-panel nos-orch" aria-label="Orchestratore e sub-agenti">
+        <div class="panel-head">
+          <h2 class="panel-title">Orchestratore Master</h2>
+          <span class="panel-sub">Autonomia graduata</span>
+        </div>
+
+        <section class="orch-section" aria-label="Stato sub-agenti">
+          <h3 class="section-label">Sub-agenti comunali</h3>
+          <div class="agents-grid" id="agents-grid"></div>
+        </section>
+
+        <section class="decision-card" id="decision-card" hidden aria-label="Scheda di decisione">
+          <div class="dec-top">
+            <span class="dec-level" id="dec-level">A3 Priorità</span>
+            <span class="dec-status" id="dec-status">In esecuzione immediata</span>
+          </div>
+          <h3 class="dec-title" id="dec-title"></h3>
+          <dl class="dec-grid">
+            <div><dt>Effetto atteso</dt><dd id="dec-effect"></dd></div>
+            <div><dt>Costo</dt><dd id="dec-cost"></dd></div>
+            <div><dt>Regola</dt><dd id="dec-rule"></dd></div>
+          </dl>
+          <div class="dec-foot">
+            <span class="dec-note">Regolatori deterministici sugli incroci</span>
+            <button type="button" class="dec-revoke" id="btn-revoca">Revoca</button>
+          </div>
+        </section>
+
+        <section class="orch-feed-wrap" aria-label="Dialogo Master">
+          <h3 class="section-label">Attività Master</h3>
+          <div class="orch-stream" id="orch-stream"></div>
+        </section>
+      </aside>
+    </div>
+
+    <!-- 3. Registro delle decisioni (144 px) -->
+    <footer class="nos-registry" aria-label="Registro delle decisioni">
+      <div class="reg-head">
+        <h2 class="panel-title">Registro delle decisioni</h2>
+        <span class="reg-note">Tracciabilità A0–A4 · Ogni azione reversibile è registrata con esito misurato</span>
+      </div>
+      <div class="reg-table-wrap">
+        <table class="reg-table">
+          <thead>
+            <tr>
+              <th>Ora</th>
+              <th>Livello</th>
+              <th>Azione eseguita</th>
+              <th>Regola autorizzativa</th>
+              <th>Costo / Durata</th>
+              <th>Esito misurato</th>
+            </tr>
+          </thead>
+          <tbody id="registry-body">
+            <tr class="reg-empty"><td colspan="6">In attesa di decisioni dell’orchestratore…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/napolios.js"></script>
+</body>
+</html>

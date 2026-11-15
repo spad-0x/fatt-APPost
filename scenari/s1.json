@@ -1,0 +1,253 @@
+{
+  "id": "s1",
+  "titolo": "S1 — Serata, rientro e biglietto (ritemporizzata per il video, ~25 s)",
+  "clock": "21:40:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "chat",
+      "do": "begin",
+      "args": {
+        "title": "Serata a Napoli",
+        "who": "Ospite · dati simulati",
+        "credits": 24
+      }
+    },
+    {
+      "at": 600,
+      "to": "chat",
+      "do": "compose",
+      "args": {
+        "text": "Che faccio stasera?"
+      }
+    },
+    {
+      "at": 3500,
+      "to": "chat",
+      "do": "ask",
+      "args": {
+        "text": "Ci penso io. Da dove parti?",
+        "replies": [
+          {
+            "id": "pos",
+            "label": "Usa la mia posizione"
+          },
+          {
+            "id": "centro",
+            "label": "Centro storico"
+          }
+        ]
+      }
+    },
+    {
+      "at": 4700,
+      "to": "chat",
+      "do": "choose",
+      "args": {
+        "ids": [
+          "pos"
+        ],
+        "userText": "Vomero, Piazza Vanvitelli",
+        "who": "Vomero · dati simulati"
+      }
+    },
+    {
+      "at": 5500,
+      "to": "chat",
+      "do": "ask",
+      "args": {
+        "profile": true,
+        "text": "Musica dal vivo come sabato scorso e rientro entro l’1:00?",
+        "replies": [
+          {
+            "id": "musica",
+            "label": "Musica dal vivo"
+          },
+          {
+            "id": "rientro",
+            "label": "Entro l’1:00"
+          },
+          {
+            "id": "cambia",
+            "label": "Cambia"
+          }
+        ]
+      }
+    },
+    {
+      "at": 7900,
+      "to": "chat",
+      "do": "choose",
+      "args": {
+        "ids": [
+          "musica",
+          "rientro"
+        ],
+        "userText": "Musica dal vivo · Entro l’1:00"
+      }
+    },
+    {
+      "at": 8900,
+      "to": "chat",
+      "do": "trace",
+      "args": {
+        "agent": "Eventi",
+        "protocol": "events.query",
+        "text": "Chiedo il calendario di stasera",
+        "detail": "3 serate compatibili"
+      }
+    },
+    {
+      "at": 9900,
+      "to": "chat",
+      "do": "trace",
+      "args": {
+        "agent": "Meteo",
+        "protocol": "conditions.query",
+        "text": "Verifico meteo stasera",
+        "detail": "Pioggia h23, lungomare"
+      }
+    },
+    {
+      "at": 10900,
+      "to": "chat",
+      "do": "trace",
+      "args": {
+        "agent": "Mobilità",
+        "protocol": "route.request",
+        "text": "Controllo ultime corse per il Vomero",
+        "detail": "Metro L1 fino alle 00:32"
+      }
+    },
+    {
+      "at": 12100,
+      "to": "chat",
+      "do": "events",
+      "args": {
+        "traceTitle": "Comune consultato · Eventi, Meteo, Mobilità",
+        "items": [
+          {
+            "id": "ev-lungomare",
+            "kind": "All’aperto",
+            "title": "Vento del Golfo Live",
+            "place": "Rotonda Diaz, Lungomare",
+            "time": "22:15",
+            "price": "15 €",
+            "distance": "18 min",
+            "crowd": "Affluenza alta",
+            "weather": "Pioggia dalle 23:00"
+          },
+          {
+            "id": "ev-cortile",
+            "status": "consigliata",
+            "badge": "Consigliata",
+            "title": "Quartetto Parthenope",
+            "place": "Palazzo Marigliano, Via S. Biagio",
+            "time": "22:15",
+            "price": "12 €",
+            "distance": "16 min",
+            "crowd": "Affluenza media",
+            "weather": "Cortile coperto · Rientro garantito"
+          },
+          {
+            "id": "ev-bagnoli",
+            "kind": "Serata",
+            "title": "Notte Flegrea Acoustic",
+            "place": "Ex Base NATO, Bagnoli",
+            "time": "22:30",
+            "price": "10 €",
+            "distance": "34 min",
+            "crowd": "Affluenza bassa",
+            "weather": "Nessun mezzo utile al rientro"
+          }
+        ],
+        "note": "Scarto il lungomare per la pioggia prevista dalle 23:00 e Bagnoli perché dopo il concerto non ci sono mezzi utili per tornare al Vomero."
+      }
+    },
+    {
+      "at": 16400,
+      "to": "chat",
+      "do": "selectEvent",
+      "args": {
+        "id": "ev-cortile",
+        "userText": "Vada per il Quartetto Parthenope, 2 posti"
+      }
+    },
+    {
+      "at": 17400,
+      "to": "chat",
+      "do": "route",
+      "args": {
+        "title": "Andata · Vanvitelli → S. Biagio",
+        "state": "Attiva",
+        "arrival": "Arrivo previsto 22:02 · in tempo per le 22:15",
+        "legs": [
+          {
+            "mode": "Metro L1",
+            "text": "Vanvitelli → Dante",
+            "duration": "9 min"
+          },
+          {
+            "mode": "A piedi",
+            "text": "Via Port’Alba → Via S. Biagio",
+            "duration": "7 min"
+          }
+        ],
+        "advisory": "Pioggia leggera sul lungomare dalle 23:00: percorso al riparo",
+        "discarded": "Alternativa auto via Marina: 34 min · coda e sosta scarsa"
+      }
+    },
+    {
+      "at": 19400,
+      "to": "chat",
+      "do": "returnPlan",
+      "args": {
+        "title": "Piano di rientro",
+        "badge": "illuminato e frequentato",
+        "walk": "Via Tribunali → P.za Dante · 8 min",
+        "lastRun": "Ultima Metro L1 alle 00:32 (Dante → Vanvitelli)",
+        "nightAlt": "Bus notturno N1 ogni 30 min da Piazza Dante",
+        "reminder": "Promemoria uscita: 00:20"
+      }
+    },
+    {
+      "at": 21200,
+      "to": "chat",
+      "do": "ticket",
+      "args": {
+        "event": "Quartetto Parthenope",
+        "place": "Palazzo Marigliano · Oggi 22:15",
+        "qty": "2 ingressi × 12,00 €",
+        "total": "Totale 24,00 €",
+        "buttonLabel": "Paga (demo)",
+        "protocol": "ticket.intent"
+      }
+    },
+    {
+      "at": 22200,
+      "on": "tap:paga",
+      "to": "chat",
+      "do": "ticketPaid",
+      "args": {
+        "code": "NAP-2140-QP2",
+        "protocol": "ticket.issued",
+        "caption": "2 ingressi · Mostra all’ingresso · Dati simulati"
+      }
+    },
+    {
+      "at": 23600,
+      "to": "chat",
+      "do": "reminder",
+      "args": {
+        "time": "00:20",
+        "text": "Ti avviso alle 00:20 per il rientro.",
+        "banner": "Rientro illuminato e frequentato"
+      }
+    },
+    {
+      "at": 25600,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}

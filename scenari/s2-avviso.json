@@ -1,0 +1,63 @@
+{
+  "id": "s2-avviso",
+  "titolo": "S2 — Stacco telefono cittadino con avviso",
+  "clock": "22:16:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "chat",
+      "do": "begin",
+      "args": {
+        "title": "Rientro in corso",
+        "who": "Amedeo di Savoia · dati simulati",
+        "credits": 24
+      }
+    },
+    {
+      "after": 300,
+      "to": "chat",
+      "do": "route",
+      "args": {
+        "title": "Percorso · Sanità → Colli Aminei",
+        "state": "Attiva",
+        "arrival": "Arrivo previsto 22:28",
+        "legs": [
+          {
+            "mode": "A piedi",
+            "text": "Corso Amedeo di Savoia",
+            "duration": "6 min"
+          },
+          {
+            "mode": "Bus C63",
+            "text": "Tondo Capodimonte → Colli Aminei",
+            "duration": "8 min"
+          }
+        ],
+        "advisory": "Monitoraggio attivo dal Comune sul tragitto",
+        "mapLabels": [
+          "Sanità",
+          "Tondo Capod.",
+          "Colli Aminei"
+        ],
+        "mapNote": "Deviazione attiva · Via Fontanelle"
+      }
+    },
+    {
+      "after": 1000,
+      "to": "chat",
+      "do": "advisory",
+      "args": {
+        "title": "Avviso dal Comune",
+        "zone": "Corso Amedeo di Savoia",
+        "cause": "Codice rosso AMB-118 in transito con onda verde sui semafori",
+        "advice": "Mezzo di soccorso in arrivo sul tuo percorso; ti ho spostato di una traversa (Via Fontanelle).",
+        "routeState": "Aggiornata"
+      }
+    },
+    {
+      "at": 4200,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}

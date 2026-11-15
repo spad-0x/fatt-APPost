@@ -1,0 +1,58 @@
+{
+  "id": "q2",
+  "titolo": "Q2 — La buca",
+  "clock": "09:15:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "chat",
+      "do": "begin",
+      "args": {
+        "title": "Segnalazione",
+        "who": "Via Foria · dati simulati",
+        "credits": 24
+      }
+    },
+    {
+      "at": 400,
+      "to": "chat",
+      "do": "user",
+      "args": {
+        "text": "C’è una buca in via Foria."
+      }
+    },
+    {
+      "at": 1100,
+      "to": "chat",
+      "do": "trace",
+      "args": {
+        "agent": "Cronaca",
+        "protocol": "citizen.report",
+        "text": "Invio la segnalazione con la posizione",
+        "detail": "Quarta segnalazione di oggi"
+      }
+    },
+    {
+      "at": 2000,
+      "to": "chat",
+      "do": "trace",
+      "args": {
+        "done": true,
+        "doneTitle": "Comune consultato · Cronaca"
+      }
+    },
+    {
+      "at": 2100,
+      "to": "chat",
+      "do": "say",
+      "args": {
+        "text": "Segnalata. È la quarta oggi nello stesso punto: intervento in programma."
+      }
+    },
+    {
+      "at": 3800,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}

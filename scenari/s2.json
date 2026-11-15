@@ -1,0 +1,255 @@
+{
+  "id": "s2",
+  "titolo": "S2 — Ambulanza con onda verde (ritemporizzata per il video, ~28 s)",
+  "clock": "22:14:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "mappa",
+      "do": "begin",
+      "args": {
+        "target": [
+          -620,
+          140,
+          -680
+        ],
+        "distance": 8600,
+        "az": 0.28,
+        "el": 0.7,
+        "transitMode": "mixed",
+        "transitAlpha": 0.36,
+        "showAssi": true,
+        "showSemafori": true
+      }
+    },
+    {
+      "at": 1000,
+      "to": "orchestratore",
+      "do": "addEvent",
+      "args": {
+        "id": "amb-118",
+        "badge": "Codice Rosso",
+        "title": "Missione AMB-118 · Soccorso urgente",
+        "detail": "P.za Gesù Nuovo → Ospedale Cardarelli",
+        "level": "red",
+        "center": [
+          14.2485,
+          40.858
+        ]
+      }
+    },
+    {
+      "at": 2000,
+      "to": "mappa",
+      "do": "showMission",
+      "args": {
+        "from": [
+          14.2521,
+          40.8479
+        ],
+        "to": [
+          14.2255,
+          40.867
+        ],
+        "fromLabel": "Partenza · Gesù Nuovo",
+        "toLabel": "Ospedale Cardarelli"
+      }
+    },
+    {
+      "at": 3200,
+      "to": "orchestratore",
+      "do": "agents",
+      "args": {
+        "active": [
+          {
+            "name": "Emergenze",
+            "status": "al lavoro",
+            "task": "Telemetria AMB-118"
+          },
+          {
+            "name": "Mobilità",
+            "status": "al lavoro",
+            "task": "3 percorsi, 9 incroci"
+          },
+          {
+            "name": "Sentinella",
+            "status": "al lavoro",
+            "task": "Blocchi sugli assi"
+          }
+        ]
+      }
+    },
+    {
+      "at": 4200,
+      "to": "orchestratore",
+      "do": "say",
+      "args": {
+        "from": "Master",
+        "text": "Codice rosso dal 118. Convoco i tre sub-agenti per aprire il corridoio.",
+        "sublines": [
+          {
+            "agent": "Emergenze",
+            "text": "AMB-118 in partenza da Gesù Nuovo verso Cardarelli."
+          },
+          {
+            "agent": "Mobilità",
+            "text": "Calcolati tre percorsi candidati con stima d’arrivo."
+          },
+          {
+            "agent": "Sentinella",
+            "text": "Verifica telecamere e sensori lungo i tre assi."
+          }
+        ]
+      }
+    },
+    {
+      "at": 6000,
+      "to": "mappa",
+      "do": "showRoutes",
+      "args": {
+        "ids": [
+          "amb-a",
+          "amb-b",
+          "amb-c"
+        ],
+        "chosen": "amb-a",
+        "callouts": [
+          {
+            "label": "Percorso A · Dante → Capodimonte",
+            "eta": "11 min (base)",
+            "chosen": true
+          },
+          {
+            "label": "Percorso B · Duomo → Via Foria",
+            "eta": "14 min"
+          },
+          {
+            "label": "Percorso C · Salvator Rosa",
+            "eta": "12 min 20 s"
+          }
+        ]
+      }
+    },
+    {
+      "at": 8500,
+      "to": "mappa",
+      "do": "blockRoute",
+      "args": {
+        "id": "amb-b",
+        "point": [
+          14.263,
+          40.858
+        ],
+        "label": "Blocco Via Foria · Sentinella",
+        "callouts": [
+          {
+            "label": "Percorso A · Scelto con onda verde",
+            "eta": "6 min 40 s",
+            "chosen": true
+          },
+          {
+            "label": "Percorso B · Via Foria",
+            "eta": "Blocco rilevato",
+            "blocked": true
+          },
+          {
+            "label": "Percorso C · Salvator Rosa",
+            "eta": "12 min 20 s"
+          }
+        ]
+      }
+    },
+    {
+      "at": 10500,
+      "to": "mappa",
+      "do": "flyTo",
+      "args": {
+        "target": [
+          -840,
+          170,
+          -1060
+        ],
+        "distance": 6600,
+        "az": 0.34,
+        "el": 0.64,
+        "ms": 1800
+      }
+    },
+    {
+      "at": 12500,
+      "to": "orchestratore",
+      "do": "decide",
+      "args": {
+        "level": "A3 Priorità",
+        "status": "In esecuzione immediata",
+        "title": "Onda verde su 9 incroci · Dante → Cardarelli",
+        "effect": "Da 11 min a 6 min 40 s (-4 min 20 s)",
+        "cost": "+2 min sulle traverse per 7 minuti",
+        "rule": "#REG-118-A3 · Preautorizzata per codice rosso",
+        "revocable": true
+      }
+    },
+    {
+      "at": 14000,
+      "to": "mappa",
+      "do": "greenWave",
+      "args": {
+        "from": 0,
+        "to": 1,
+        "ms": 9000,
+        "etaText": "Onda verde attiva · AMB-118 · 9 incroci si aprono davanti al mezzo"
+      }
+    },
+    {
+      "at": 17500,
+      "to": "mappa",
+      "do": "greenWave",
+      "args": {
+        "etaText": "Onda verde attiva · AMB-118 · Arrivo stimato 2 min 40 s"
+      }
+    },
+    {
+      "at": 19000,
+      "to": "bus",
+      "do": "send",
+      "args": {
+        "type": "advisory.push",
+        "target": "Assistenti in zona Amedeo di Savoia",
+        "summary": "Mezzo di soccorso in arrivo: deviazione consigliata di una traversa."
+      }
+    },
+    {
+      "at": 23000,
+      "to": "mappa",
+      "do": "finishMission",
+      "args": {
+        "etaText": "AMB-118 al Cardarelli · 6 min 40 s (-4 min 20 s risparmiati)"
+      }
+    },
+    {
+      "at": 24500,
+      "to": "orchestratore",
+      "do": "decisionStatus",
+      "args": {
+        "status": "Completata · Semafori ripristinati"
+      }
+    },
+    {
+      "at": 25500,
+      "to": "registro",
+      "do": "log",
+      "args": {
+        "level": "A3 Priorità",
+        "action": "Onda verde 9 incroci · AMB-118 Gesù Nuovo → Cardarelli",
+        "rule": "#REG-118-A3",
+        "cost": "+2 min traverse · 7 min",
+        "outcome": "6 min 40 s (-4 min 20 s)"
+      }
+    },
+    {
+      "at": 28000,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}

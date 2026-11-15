@@ -1,0 +1,141 @@
+{
+  "id": "dati",
+  "titolo": "Dati — La città si accende e si compone strato per strato (riprendere con ?vista=mappa)",
+  "clock": "21:30:00",
+  "steps": [
+    {
+      "at": 0,
+      "to": "mappa",
+      "do": "begin",
+      "args": {
+        "target": [
+          -350,
+          100,
+          -450
+        ],
+        "distance": 19500,
+        "az": 0.08,
+        "el": 1.36,
+        "transitMode": "none",
+        "dormant": true,
+        "showAssi": false,
+        "showSemafori": false
+      }
+    },
+    {
+      "at": 3000,
+      "to": "mappa",
+      "do": "setTransit",
+      "args": {
+        "dormant": false,
+        "mode": "none",
+        "showAssi": false,
+        "showSemafori": false,
+        "ms": 1600
+      }
+    },
+    {
+      "at": 3100,
+      "to": "mappa",
+      "do": "flyTo",
+      "args": {
+        "target": [
+          -450,
+          110,
+          -220
+        ],
+        "distance": 10600,
+        "az": 0.24,
+        "el": 0.72,
+        "ms": 3400
+      }
+    },
+    {
+      "at": 8000,
+      "to": "mappa",
+      "do": "flyTo",
+      "args": {
+        "target": [
+          -520,
+          110,
+          -260
+        ],
+        "distance": 9000,
+        "az": 0.44,
+        "el": 0.7,
+        "ms": 17000
+      }
+    },
+    {
+      "at": 10500,
+      "to": "mappa",
+      "do": "setTransit",
+      "args": {
+        "mode": "rail",
+        "transitAlpha": 0.95,
+        "ms": 600
+      }
+    },
+    {
+      "at": 12000,
+      "to": "mappa",
+      "do": "setTransit",
+      "args": {
+        "mode": "mixed",
+        "transitAlpha": 0.9,
+        "ms": 600
+      }
+    },
+    {
+      "at": 15300,
+      "to": "mappa",
+      "do": "setTransit",
+      "args": {
+        "mode": "mixed",
+        "transitAlpha": 0.42,
+        "showAssi": true,
+        "showSemafori": true,
+        "ms": 600
+      }
+    },
+    {
+      "at": 16300,
+      "to": "mappa",
+      "do": "setAxis",
+      "args": {
+        "id": "via-marina",
+        "status": "ambra",
+        "highlight": false,
+        "flashCameras": false
+      }
+    },
+    {
+      "at": 17800,
+      "to": "mappa",
+      "do": "greenWave",
+      "args": {
+        "progress": 0.16,
+        "activeSems": [],
+        "passedSems": []
+      }
+    },
+    {
+      "at": 19800,
+      "to": "mappa",
+      "do": "riskHeatmap",
+      "args": {
+        "opacity": 0.42,
+        "activeIds": [
+          "z-centro",
+          "z-dante",
+          "z-garibaldi"
+        ]
+      }
+    },
+    {
+      "at": 26000,
+      "to": "scena",
+      "do": "hold"
+    }
+  ]
+}
