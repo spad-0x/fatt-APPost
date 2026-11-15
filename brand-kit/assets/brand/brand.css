@@ -1,0 +1,10 @@
+/* Brand-only tokens. Interface tokens remain governed by DESIGN.md. */
+:root {
+  --brand-dark: #014630;
+  --brand-white: #ffffff;
+  --brand-mint: #9bf9a4;
+  --brand-on-light: #2f6b4f;
+  --brand-ink: #111827;
+  --brand-wordmark-font: "Sora", sans-serif;
+}
+/* Inline SVG only: .brand-mark { color: var(--brand-on-light); } */

@@ -1,0 +1,290 @@
+[
+  {
+    "source": "assets/brand/svg/logo-stacked-dark.svg",
+    "output": "assets/brand/png/logo-stacked-dark-1024.png",
+    "width": 1024,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-dark.svg",
+    "output": "assets/brand/png/logo-stacked-dark-2048.png",
+    "width": 2048,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-reverse.svg",
+    "output": "assets/brand/png/logo-stacked-reverse-1024.png",
+    "width": 1024,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-reverse.svg",
+    "output": "assets/brand/png/logo-stacked-reverse-2048.png",
+    "width": 2048,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-on-light.svg",
+    "output": "assets/brand/png/logo-stacked-on-light-1024.png",
+    "width": 1024,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-on-light.svg",
+    "output": "assets/brand/png/logo-stacked-on-light-2048.png",
+    "width": 2048,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-mono-white.svg",
+    "output": "assets/brand/png/logo-stacked-mono-white-2048.png",
+    "width": 2048,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-mono-sage.svg",
+    "output": "assets/brand/png/logo-stacked-mono-sage-2048.png",
+    "width": 2048,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-stacked-mono-ink.svg",
+    "output": "assets/brand/png/logo-stacked-mono-ink-2048.png",
+    "width": 2048,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-dark.svg",
+    "output": "assets/brand/png/logo-horizontal-dark-1600.png",
+    "width": 1600,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-dark.svg",
+    "output": "assets/brand/png/logo-horizontal-dark-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-reverse.svg",
+    "output": "assets/brand/png/logo-horizontal-reverse-1600.png",
+    "width": 1600,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-reverse.svg",
+    "output": "assets/brand/png/logo-horizontal-reverse-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-on-light.svg",
+    "output": "assets/brand/png/logo-horizontal-on-light-1600.png",
+    "width": 1600,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-on-light.svg",
+    "output": "assets/brand/png/logo-horizontal-on-light-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-mono-white.svg",
+    "output": "assets/brand/png/logo-horizontal-mono-white-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-mono-sage.svg",
+    "output": "assets/brand/png/logo-horizontal-mono-sage-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-horizontal-mono-ink.svg",
+    "output": "assets/brand/png/logo-horizontal-mono-ink-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-dark.svg",
+    "output": "assets/brand/png/logo-wordmark-dark-1600.png",
+    "width": 1600,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-dark.svg",
+    "output": "assets/brand/png/logo-wordmark-dark-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-reverse.svg",
+    "output": "assets/brand/png/logo-wordmark-reverse-1600.png",
+    "width": 1600,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-reverse.svg",
+    "output": "assets/brand/png/logo-wordmark-reverse-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-on-light.svg",
+    "output": "assets/brand/png/logo-wordmark-on-light-1600.png",
+    "width": 1600,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-on-light.svg",
+    "output": "assets/brand/png/logo-wordmark-on-light-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-mono-white.svg",
+    "output": "assets/brand/png/logo-wordmark-mono-white-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-mono-sage.svg",
+    "output": "assets/brand/png/logo-wordmark-mono-sage-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "assets/brand/svg/logo-wordmark-mono-ink.svg",
+    "output": "assets/brand/png/logo-wordmark-mono-ink-3200.png",
+    "width": 3200,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon.svg",
+    "output": "public/icons/icon-192.png",
+    "width": 192,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon.svg",
+    "output": "public/icons/icon-512.png",
+    "width": 512,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon.svg",
+    "output": "public/favicon-16x16.png",
+    "width": 16,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon.svg",
+    "output": "public/favicon-32x32.png",
+    "width": 32,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon.svg",
+    "output": "public/favicon-48x48.png",
+    "width": 48,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon.svg",
+    "output": "public/favicon-96x96.png",
+    "width": 96,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon.svg",
+    "output": "public/apple-touch-icon.png",
+    "width": 180,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon-maskable.svg",
+    "output": "public/icons/icon-maskable-192.png",
+    "width": 192,
+    "height": null
+  },
+  {
+    "source": "public/icons/icon-maskable.svg",
+    "output": "public/icons/icon-maskable-512.png",
+    "width": 512,
+    "height": null
+  },
+  {
+    "source": "marketing/avatar/avatar.svg",
+    "output": "marketing/avatar/avatar-512.png",
+    "width": 512,
+    "height": null
+  },
+  {
+    "source": "marketing/avatar/avatar.svg",
+    "output": "marketing/avatar/avatar-1024.png",
+    "width": 1024,
+    "height": null
+  },
+  {
+    "source": "marketing/avatar/avatar-round.svg",
+    "output": "marketing/avatar/avatar-round-1024.png",
+    "width": 1024,
+    "height": null
+  },
+  {
+    "source": "marketing/og/og-image.svg",
+    "output": "marketing/og/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  {
+    "source": "marketing/og/og-horizontal.svg",
+    "output": "marketing/og/og-horizontal.png",
+    "width": 1200,
+    "height": 630
+  },
+  {
+    "source": "marketing/social/post-square.svg",
+    "output": "marketing/social/post-square.png",
+    "width": 1080,
+    "height": 1080
+  },
+  {
+    "source": "marketing/social/story.svg",
+    "output": "marketing/social/story.png",
+    "width": 1080,
+    "height": 1920
+  },
+  {
+    "source": "marketing/social/banner.svg",
+    "output": "marketing/social/banner.png",
+    "width": 1584,
+    "height": 396
+  },
+  {
+    "source": "marketing/social/repository-social-preview.svg",
+    "output": "marketing/social/repository-social-preview.png",
+    "width": 1280,
+    "height": 640
+  },
+  {
+    "source": "docs/centering-proof.svg",
+    "output": "docs/centering-proof.png",
+    "width": 1200,
+    "height": null
+  },
+  {
+    "source": "docs/hand-trace-check.svg",
+    "output": "docs/hand-trace-check.png",
+    "width": 1254,
+    "height": null
+  },
+  {
+    "source": "preview/brand-kit-overview.svg",
+    "output": "preview/brand-kit-overview.png",
+    "width": 1600,
+    "height": null
+  }
+]

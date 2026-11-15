@@ -1,0 +1,35 @@
+{
+  "editableFont": {
+    "loaded": true,
+    "faces": [
+      {
+        "family": "Sora",
+        "status": "loaded",
+        "weight": "100 800"
+      }
+    ]
+  },
+  "desktop": {
+    "brokenImages": [],
+    "horizontalOverflow": false
+  },
+  "mobile": {
+    "brokenImages": [],
+    "horizontalOverflow": false
+  },
+  "editable_and_outlined_wordmark_pixel_bounds_1200": {
+    "editable": [
+      120,
+      736,
+      1080,
+      864
+    ],
+    "outlined": [
+      120,
+      736,
+      1080,
+      864
+    ]
+  },
+  "preview_internal_links": "all resolve to existing local files"
+}

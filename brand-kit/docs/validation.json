@@ -1,0 +1,1344 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-15T10:28:10.490261+00:00",
+  "png_render_jobs": 48,
+  "svg_files": 47,
+  "checks_passed": 232,
+  "hand_silhouette_iou": 0.9968916910422336,
+  "centering_from_actual_paths": {
+    "stacked": {
+      "hand_bounds": [
+        275.00000257422255,
+        336.616215,
+        924.9999969365739,
+        672.4014333913195
+      ],
+      "wordmark_bounds": [
+        120.0,
+        736.401433,
+        1079.9999993699998,
+        863.38378483
+      ],
+      "content_center": [
+        599.9999996849999,
+        599.999999915
+      ],
+      "max_error_units": 3.1500007935392205e-07
+    },
+    "horizontal": {
+      "hand_bounds": [
+        88.00000110889587,
+        87.67703,
+        367.99999868037037,
+        232.32297023010688
+      ],
+      "wordmark_bounds": [
+        432.0,
+        109.736152,
+        1192.000000932,
+        210.26384738800002
+      ],
+      "content_center": [
+        640.0000010204479,
+        160.00000011505344
+      ],
+      "max_error_units": 1.020447939481528e-06
+    },
+    "wordmark": {
+      "hand_bounds": null,
+      "wordmark_bounds": [
+        120.0,
+        76.508824,
+        1079.9999993699998,
+        203.49117583
+      ],
+      "content_center": [
+        599.9999996849999,
+        139.999999915
+      ],
+      "max_error_units": 3.1500007935392205e-07
+    }
+  },
+  "safe_zone": {
+    "public/icons/icon-maskable-192.png": {
+      "ink_max_radius": 69.58807369082723,
+      "safe_radius": 76.80000000000001
+    },
+    "public/icons/icon-maskable-512.png": {
+      "ink_max_radius": 185.10132360412769,
+      "safe_radius": 204.8
+    },
+    "marketing/avatar/avatar-1024.png": {
+      "ink_max_radius": 370.15199580712783,
+      "safe_radius": 409.6
+    }
+  },
+  "checks": [
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-dark-1024.png",
+      "passed": true,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-dark-1024.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: assets/brand/png/logo-stacked-dark-1024.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-dark-2048.png",
+      "passed": true,
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-dark-2048.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: assets/brand/png/logo-stacked-dark-2048.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-reverse-1024.png",
+      "passed": true,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-reverse-1024.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-reverse-2048.png",
+      "passed": true,
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-reverse-2048.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-on-light-1024.png",
+      "passed": true,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-on-light-1024.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-on-light-2048.png",
+      "passed": true,
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-on-light-2048.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-mono-white-2048.png",
+      "passed": true,
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-mono-white-2048.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-mono-sage-2048.png",
+      "passed": true,
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-mono-sage-2048.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-stacked-mono-ink-2048.png",
+      "passed": true,
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-stacked-mono-ink-2048.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-dark-1600.png",
+      "passed": true,
+      "size": [
+        1600,
+        400
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-dark-1600.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: assets/brand/png/logo-horizontal-dark-1600.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-dark-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        800
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-dark-3200.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: assets/brand/png/logo-horizontal-dark-3200.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-reverse-1600.png",
+      "passed": true,
+      "size": [
+        1600,
+        400
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-reverse-1600.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-reverse-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        800
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-reverse-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-on-light-1600.png",
+      "passed": true,
+      "size": [
+        1600,
+        400
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-on-light-1600.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-on-light-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        800
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-on-light-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-mono-white-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        800
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-mono-white-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-mono-sage-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        800
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-mono-sage-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-horizontal-mono-ink-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        800
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-horizontal-mono-ink-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-dark-1600.png",
+      "passed": true,
+      "size": [
+        1600,
+        373
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-dark-1600.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: assets/brand/png/logo-wordmark-dark-1600.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-dark-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        747
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-dark-3200.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: assets/brand/png/logo-wordmark-dark-3200.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-reverse-1600.png",
+      "passed": true,
+      "size": [
+        1600,
+        373
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-reverse-1600.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-reverse-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        747
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-reverse-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-on-light-1600.png",
+      "passed": true,
+      "size": [
+        1600,
+        373
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-on-light-1600.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-on-light-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        747
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-on-light-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-mono-white-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        747
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-mono-white-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-mono-sage-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        747
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-mono-sage-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: assets/brand/png/logo-wordmark-mono-ink-3200.png",
+      "passed": true,
+      "size": [
+        3200,
+        747
+      ]
+    },
+    {
+      "check": "PNG alpha: assets/brand/png/logo-wordmark-mono-ink-3200.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: public/icons/icon-192.png",
+      "passed": true,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "check": "PNG alpha: public/icons/icon-192.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/icons/icon-192.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/icons/icon-512.png",
+      "passed": true,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "check": "PNG alpha: public/icons/icon-512.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/icons/icon-512.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/favicon-16x16.png",
+      "passed": true,
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "check": "PNG alpha: public/favicon-16x16.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/favicon-16x16.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/favicon-32x32.png",
+      "passed": true,
+      "size": [
+        32,
+        32
+      ]
+    },
+    {
+      "check": "PNG alpha: public/favicon-32x32.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/favicon-32x32.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/favicon-48x48.png",
+      "passed": true,
+      "size": [
+        48,
+        48
+      ]
+    },
+    {
+      "check": "PNG alpha: public/favicon-48x48.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/favicon-48x48.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/favicon-96x96.png",
+      "passed": true,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "check": "PNG alpha: public/favicon-96x96.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/favicon-96x96.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/apple-touch-icon.png",
+      "passed": true,
+      "size": [
+        180,
+        180
+      ]
+    },
+    {
+      "check": "PNG alpha: public/apple-touch-icon.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/apple-touch-icon.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/icons/icon-maskable-192.png",
+      "passed": true,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "check": "PNG alpha: public/icons/icon-maskable-192.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/icons/icon-maskable-192.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: public/icons/icon-maskable-512.png",
+      "passed": true,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "check": "PNG alpha: public/icons/icon-maskable-512.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: public/icons/icon-maskable-512.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/avatar/avatar-512.png",
+      "passed": true,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/avatar/avatar-512.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/avatar/avatar-512.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/avatar/avatar-1024.png",
+      "passed": true,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/avatar/avatar-1024.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/avatar/avatar-1024.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/avatar/avatar-round-1024.png",
+      "passed": true,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/avatar/avatar-round-1024.png",
+      "passed": true,
+      "alpha_min": 0,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG size: marketing/og/og-image.png",
+      "passed": true,
+      "size": [
+        1200,
+        630
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/og/og-image.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/og/og-image.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/og/og-horizontal.png",
+      "passed": true,
+      "size": [
+        1200,
+        630
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/og/og-horizontal.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/og/og-horizontal.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/social/post-square.png",
+      "passed": true,
+      "size": [
+        1080,
+        1080
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/social/post-square.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/social/post-square.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/social/story.png",
+      "passed": true,
+      "size": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/social/story.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/social/story.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/social/banner.png",
+      "passed": true,
+      "size": [
+        1584,
+        396
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/social/banner.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/social/banner.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: marketing/social/repository-social-preview.png",
+      "passed": true,
+      "size": [
+        1280,
+        640
+      ]
+    },
+    {
+      "check": "PNG alpha: marketing/social/repository-social-preview.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: marketing/social/repository-social-preview.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: docs/centering-proof.png",
+      "passed": true,
+      "size": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "check": "PNG alpha: docs/centering-proof.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: docs/centering-proof.png",
+      "passed": true,
+      "color": "#014630"
+    },
+    {
+      "check": "PNG size: docs/hand-trace-check.png",
+      "passed": true,
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "check": "PNG alpha: docs/hand-trace-check.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: docs/hand-trace-check.png",
+      "passed": true,
+      "color": "#000000"
+    },
+    {
+      "check": "PNG size: preview/brand-kit-overview.png",
+      "passed": true,
+      "size": [
+        1600,
+        1480
+      ]
+    },
+    {
+      "check": "PNG alpha: preview/brand-kit-overview.png",
+      "passed": true,
+      "alpha_min": 255,
+      "alpha_max": 255
+    },
+    {
+      "check": "PNG background: preview/brand-kit-overview.png",
+      "passed": true,
+      "color": "#f4f5f7"
+    },
+    {
+      "check": "ICO includes 16, 32 and 48 pixels",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/marks/hand-currentcolor.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/marks/hand-currentcolor.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/marks/hand-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/marks/hand-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/marks/hand-mint.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/marks/hand-mint.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/marks/hand-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/marks/hand-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/marks/hand-white.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/marks/hand-white.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-horizontal-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-horizontal-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-horizontal-mono-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-horizontal-mono-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-horizontal-mono-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-horizontal-mono-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-horizontal-mono-white.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-horizontal-mono-white.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-horizontal-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-horizontal-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-horizontal-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-horizontal-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-stacked-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-stacked-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-stacked-mono-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-stacked-mono-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-stacked-mono-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-stacked-mono-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-stacked-mono-white.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-stacked-mono-white.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-stacked-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-stacked-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-stacked-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-stacked-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-wordmark-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-wordmark-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-wordmark-mono-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-wordmark-mono-ink.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-wordmark-mono-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-wordmark-mono-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-wordmark-mono-white.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-wordmark-mono-white.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-wordmark-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-wordmark-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: assets/brand/svg/logo-wordmark-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: assets/brand/svg/logo-wordmark-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: docs/centering-proof.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: docs/centering-proof.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: docs/hand-trace-check.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: docs/hand-trace-check.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/avatar/avatar-round.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/avatar/avatar-round.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/avatar/avatar.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/avatar/avatar.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/og/og-horizontal.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/og/og-horizontal.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/og/og-image.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/og/og-image.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/social/banner.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/social/banner.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/social/post-square.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/social/post-square.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/social/repository-social-preview.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/social/repository-social-preview.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: marketing/social/story.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: marketing/social/story.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: preview/brand-kit-overview.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: preview/brand-kit-overview.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/brand/hand-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/brand/hand-sage.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/brand/logo-horizontal-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/brand/logo-horizontal-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/brand/logo-horizontal-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/brand/logo-horizontal-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/brand/logo-stacked-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/brand/logo-stacked-dark.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/brand/logo-stacked-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/brand/logo-stacked-on-light.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/brand/logo-stacked-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/brand/logo-stacked-reverse.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/favicon.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/favicon.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/icons/icon-maskable.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/icons/icon-maskable.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/icons/icon.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/icons/icon.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: public/safari-pinned-tab.svg",
+      "passed": true
+    },
+    {
+      "check": "Production SVG uses only vectors: public/safari-pinned-tab.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: sources/logo-horizontal-editable.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: sources/logo-stacked-editable.svg",
+      "passed": true
+    },
+    {
+      "check": "SVG unique IDs: sources/logo-wordmark-editable.svg",
+      "passed": true
+    },
+    {
+      "check": "Actual vector centering: stacked",
+      "passed": true,
+      "center": [
+        599.9999996849999,
+        599.999999915
+      ],
+      "max_error_units": 3.1500007935392205e-07
+    },
+    {
+      "check": "Stacked hand and wordmark share X axis",
+      "passed": true
+    },
+    {
+      "check": "Actual vector centering: horizontal",
+      "passed": true,
+      "center": [
+        640.0000010204479,
+        160.00000011505344
+      ],
+      "max_error_units": 1.020447939481528e-06
+    },
+    {
+      "check": "Horizontal hand and wordmark share Y axis",
+      "passed": true
+    },
+    {
+      "check": "Actual vector centering: wordmark",
+      "passed": true,
+      "center": [
+        599.9999996849999,
+        139.999999915
+      ],
+      "max_error_units": 3.1500007935392205e-07
+    },
+    {
+      "check": "Primary color (255, 255, 255)",
+      "passed": true,
+      "solid_pixels": 115264
+    },
+    {
+      "check": "Primary color (155, 249, 164)",
+      "passed": true,
+      "solid_pixels": 10373
+    },
+    {
+      "check": "Hand silhouette overlap with supplied source",
+      "passed": true,
+      "intersection_over_union": 0.9968916910422336
+    },
+    {
+      "check": "Mask-safe silhouette: public/icons/icon-maskable-192.png",
+      "passed": true,
+      "max_radius": 69.58807369082723,
+      "limit": 76.80000000000001
+    },
+    {
+      "check": "Mask-safe silhouette: public/icons/icon-maskable-512.png",
+      "passed": true,
+      "max_radius": 185.10132360412769,
+      "limit": 204.8
+    },
+    {
+      "check": "Mask-safe silhouette: marketing/avatar/avatar-1024.png",
+      "passed": true,
+      "max_radius": 370.15199580712783,
+      "limit": 409.6
+    },
+    {
+      "check": "Manifest asset exists: icons/icon-192.png",
+      "passed": true
+    },
+    {
+      "check": "Manifest icon size: icons/icon-192.png",
+      "passed": true
+    },
+    {
+      "check": "Manifest asset exists: icons/icon-512.png",
+      "passed": true
+    },
+    {
+      "check": "Manifest icon size: icons/icon-512.png",
+      "passed": true
+    },
+    {
+      "check": "Manifest asset exists: icons/icon-maskable-512.png",
+      "passed": true
+    },
+    {
+      "check": "Manifest icon size: icons/icon-maskable-512.png",
+      "passed": true
+    },
+    {
+      "check": "PWA background colors match DESIGN.md",
+      "passed": true
+    }
+  ]
+}
