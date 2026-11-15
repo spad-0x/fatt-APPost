@@ -1742,13 +1742,13 @@ async function init() {
   registro.reset();
   applyTransitConfig({ mode: 'mixed', highlightLines: [], transitAlpha: 0.85 });
 
-  // A direct visit should open an animated demo, not an empty/paused timeline.
+  // Always start the operational demo, including existing scene links and autoplay=0.
   const demoUrl = new URL(window.location.href);
-  if (!demoUrl.searchParams.has('scena')) {
+  if (!demoUrl.searchParams.get('scena')) {
     demoUrl.searchParams.set('scena', 'apertura');
-    if (!demoUrl.searchParams.has('autoplay')) demoUrl.searchParams.set('autoplay', '1');
-    window.history.replaceState(null, '', demoUrl);
   }
+  demoUrl.searchParams.set('autoplay', '1');
+  window.history.replaceState(null, '', demoUrl);
 
   const engine = await startRegia({
     showHud: false,
