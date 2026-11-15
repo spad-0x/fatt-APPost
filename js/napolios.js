@@ -1159,8 +1159,12 @@ async function init() {
     }
   }
 
+  let lastSimulationFrame = null;
+
   function frame(now) {
     requestAnimationFrame(frame);
+    const frameDelta = lastSimulationFrame === null ? 0 : Math.min((now - lastSimulationFrame) / 1000, 0.1);
+    lastSimulationFrame = now;
     if (sceneState.follow && sceneState.selectedVehicle) {
       const v = sim.vehicles.find((x) => x.id === sceneState.selectedVehicle);
       if (v) {
@@ -1178,6 +1182,15 @@ async function init() {
     if (isPlaying) {
       sim.seekTo((engineRef.state.t / 1000) * 5);
       overlayDirty = true;
+    } else if (engineRef?.state?.ended) {
+      // Keep the city alive after the scripted presentation, but respect manual pauses.
+      sim.seekTo(sim.time + frameDelta * 5);
+      overlayDirty = true;
+      if (now - lastHudTime > 220) {
+        lastHudTime = now;
+        updateKpis();
+        if (sceneState.selectedVehicle || sceneState.selectedStation) updateSelectionCard();
+      }
     }
     renderFrame(now);
   }
@@ -1728,6 +1741,14 @@ async function init() {
   orchestratore.reset();
   registro.reset();
   applyTransitConfig({ mode: 'mixed', highlightLines: [], transitAlpha: 0.85 });
+
+  // A direct visit should open an animated demo, not an empty/paused timeline.
+  const demoUrl = new URL(window.location.href);
+  if (!demoUrl.searchParams.has('scena')) {
+    demoUrl.searchParams.set('scena', 'apertura');
+    if (!demoUrl.searchParams.has('autoplay')) demoUrl.searchParams.set('autoplay', '1');
+    window.history.replaceState(null, '', demoUrl);
+  }
 
   const engine = await startRegia({
     targets: { mappa, orchestratore, registro, bus },
