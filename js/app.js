@@ -76,6 +76,7 @@ function init() {
     transitions.showChat();
     disableServiceWorker().catch(() => {});
     startRegia({
+      showHud: false,
       targets: { chat: chat.scene },
       scenes: SCENES,
       onLoad(script) {
